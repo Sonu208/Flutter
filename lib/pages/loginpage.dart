@@ -94,28 +94,26 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40.0,
                       ),
                       Material(
-                        // ignore: deprecated_member_use
-                        color: context.theme.buttonColor,
-                        borderRadius:
-                            BorderRadius.circular(changeButton ? 50 : 8),
-                        child: InkWell(
-                          onTap: () => moveToHome(context),
-                          child: AnimatedContainer(
-                            duration: Duration(seconds: 1),
-                            width: changeButton ? 50 : 150,
-                            height: 50,
-                            alignment: Alignment.center,
-                            child: changeButton
-                                ? Icon(
-                                    Icons.done,
-                                    color: Colors.white,
-                                  )
-                                : Text(
-                                    "Login",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
+                        color: context.theme.colorScheme.primary, // Use primary color from colorScheme
+  borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
+  child: InkWell(
+    onTap: () => moveToHome(context),
+    child: AnimatedContainer(
+      duration: Duration(seconds: 1),
+      width: changeButton ? 50 : 150,
+      height: 50,
+      alignment: Alignment.center,
+      child: changeButton
+          ? Icon(
+              Icons.done,
+              color: Colors.white,
+            )
+          : Text(
+              "Login",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
                                   ),
                           ),
                         ),

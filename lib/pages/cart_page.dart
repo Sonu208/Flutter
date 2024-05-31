@@ -39,7 +39,7 @@ class _CartTotal extends StatelessWidget {
                   .text
                   .xl5
                   // ignore: deprecated_member_use
-                  .color(context.theme.accentColor)
+                  .color(context.theme.colorScheme.secondary)
                   .make();
             },
           ),
@@ -53,7 +53,7 @@ class _CartTotal extends StatelessWidget {
             style: ButtonStyle(
                 backgroundColor:
                     // ignore: deprecated_member_use
-                    MaterialStateProperty.all(context.theme.buttonColor)),
+                    MaterialStateProperty.all(context.theme.colorScheme.primary)),
             child: "Buy".text.white.make(),
           ).w32(context)
         ],

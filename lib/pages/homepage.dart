@@ -50,23 +50,22 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(),
       backgroundColor: context.canvasColor,
-      floatingActionButton: VxBuilder(
-        mutations: {AddMutation, RemoveMutation},
-        builder: (ctx, _, __) => FloatingActionButton(
-          onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          // ignore: deprecated_member_use
-          backgroundColor: context.theme.buttonColor,
-          child: Icon(
-            CupertinoIcons.cart,
-            color: Colors.white,
-          ),
-        ).badge(
-            color: Vx.gray200,
-            size: 22,
-            count: _cart.items.length,
-            textStyle: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
+    floatingActionButton: VxBuilder(
+  mutations: {AddMutation, RemoveMutation},
+  builder: (ctx, _, __) => FloatingActionButton(
+    onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
+    backgroundColor: Theme.of(context).colorScheme.primary, // Use primary color from colorScheme
+    child: Icon(
+      CupertinoIcons.cart,
+      color: Colors.white,
+    ),
+  ).badge(
+      color: Vx.gray200,
+      size: 22,
+      count: _cart.items.length,
+      textStyle: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold,
             )),
       ),
       body: SafeArea(
